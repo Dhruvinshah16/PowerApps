@@ -1,0 +1,9 @@
+Show People Picker as Dropdown with Cascading Dropdown in Power Apps:
+
+On Change of Dropdown:
+Clear(SignFinal);
+ClearCollect(Signatory, Filter('Domain',Title=DataCardValue2.Selected.Value));
+ForAll(Signatory,Collect(SignFinal,{Value:'Signatory'.DisplayName,DisplayName:'Signatory'.DisplayName,Email:'Signatory'.Email,Picture:'Signatory'.Picture,Claims:'Signatory'.Claims,Department:'Signatory'.Department,JobTitle:'Signatory'.JobTitle}))
+
+Items of People Picker:
+SignFinal
