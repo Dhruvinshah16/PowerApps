@@ -1,0 +1,10 @@
+1. ClearCollect(CandidateInfo,Split(First(Response).Value,"*|"));
+2.ClearCollect(CandidateEntities,AddColumns(CandidateInfo,"Entity",First(Split(Result,"|")).Result,"EntityVal",Last(FirstN(Split(Result,"|"),2)).Result));
+
+OR
+
+
+2. ClearCollect(CandidateEntities,AddColumns(CandidateInfo,"Entity",First(Split(Result,"|")).Result,"EntityVal",Last(Split(Result,"|")).Result));
+
+
+
