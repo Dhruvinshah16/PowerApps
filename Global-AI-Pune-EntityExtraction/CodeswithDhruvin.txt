@@ -1,0 +1,11 @@
+Button Click Code:
+
+ClearCollect(Response,'Button->Predict'.Run(TextInput1.Text).entityextraction);
+ClearCollect(CandidateInfo,Split(First(Response).Value,"*|"));
+ClearCollect(CandidateEntities,AddColumns(CandidateInfo,"Entity",First(Split(Result,"|")).Result,"EntityVal",Last(FirstN(Split(Result,"|"),2)).Result));
+ResetForm(Form1);NewForm(Form1);
+UpdateContext({VisibleForm:true});
+
+
+Default Evenit on Form:
+First(Filter(CandidateEntities,"PersonName" in Entity)).EntityVal
