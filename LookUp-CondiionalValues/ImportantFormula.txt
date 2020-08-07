@@ -1,0 +1,1 @@
+Filter(RenameColumns(AddColumns(RenameColumns(Choices([@Requests].Domain),"Id","MID"),"Status",LookUp(Choices([@Requests].'Domain:Status'),Id=MID).Value),"MID","Id"),Status="Active")
