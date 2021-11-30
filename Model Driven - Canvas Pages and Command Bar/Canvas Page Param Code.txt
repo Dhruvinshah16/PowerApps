@@ -1,0 +1,23 @@
+// Write this to onStart of App
+
+
+Set(
+    RecordItem,
+    If(
+        IsBlank(Param("recordId")),
+        Blank(),
+        LookUp(
+            Tickets,
+            Tickets = GUID(Substitute(Substitute(Param("recordId"),"{",""),"}",""))
+        )
+    )
+)
+
+
+// Code for Gallery Item
+
+If(
+    IsBlank(RecordItem),
+    Tickets,
+    RecordItem
+)
